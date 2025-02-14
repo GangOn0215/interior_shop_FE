@@ -1,0 +1,222 @@
+.main__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 중앙 정렬 */
+  align-items: center;
+  min-height: calc(100vh - 200px); /* 푸터 높이 고려 */
+  /* background: url('@/assets/main-bg.jpg') no-repeat center center; */
+  background-size: cover; /* 배경 크기 맞추기 */
+  padding: 2rem 0;
+}
+
+.main__box {
+  width: 80%;
+  max-width: 1200px;
+  background: rgba(255, 255, 255, 0.9); /* 반투명 흰색 */
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+  .main__swiper {
+    width: 100%;
+    height: 500px !important;
+    overflow: hidden;
+    cursor: grab;  
+  }
+
+.main-swiper {
+  width: 100%;
+  max-width: 1200px;
+  height: 500px;
+  overflow: hidden; /* swiper가 밖으로 넘치지 않도록 */
+}
+
+/* Swiper 네비게이션 버튼 */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #ffffff !important; /* 화살표 색상 */
+  background-color: rgba(0, 0, 0, 0.4); /* 반투명 블랙 배경 */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+
+/* 호버 효과 */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: rgba(255, 255, 255, 0.8); /* 호버 시 밝아짐 */
+  color: #000 !important; /* 호버 시 화살표 색상 변경 */
+}
+
+/* 화살표 아이콘 크기 조정 */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* 네비게이션 위치 조정 */
+.swiper-button-next {
+  right: 15px;
+}
+
+.swiper-button-prev {
+  left: 15px;
+}
+
+.swiper-pagination {
+  position: absolute;
+  bottom: 20px !important; /* 페이지네이션을 좀 더 위로 */
+  z-index: 10;
+}
+
+.swiper-pagination-bullet {
+  // background-color: rgba(255, 255, 255, 0.9) !important; /* 기존보다 더 밝게 */
+  background-color: black !important; /* 기존보다 더 밝게 */
+  opacity: 1;
+  width: 12px;
+  height: 12px;
+  transition: all 0.3s ease-in-out;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #ffd700 !important; /* 골드 컬러 강조 */
+  width: 16px;
+  height: 16px;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.8); /* 빛나는 효과 */
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .swiper-pagination {
+    bottom: 15px !important; /* 모바일에서는 좀 더 위로 */
+  }
+}
+
+
+
+.swiper-wrapper {
+  display: flex !important;
+  height: auto !important;
+}
+
+.swiper-slide {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} */
+
+
+
+.main__content {
+  width: 70%;
+  height: 50vh;
+  padding: 1rem;
+  box-sizing: border-box;
+  margin: 0 auto;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.main__center {
+  // height: 50vh;
+}
+
+/* 왼쪽 배경 이미지 */
+.main__left {
+  flex: 1.2;
+  position: relative;
+  /* background: url('@/assets/main-bg.jpg') no-repeat center; */
+  background-size: cover;
+}
+
+.main__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.logo {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  font-weight: bold;
+}
+
+/* 오른쪽 컨텐츠 */
+.main__right {
+  flex: 1;
+  background: #222;
+  color: white;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.desc {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.main__button {
+  padding: 10px 20px;
+  border: none;
+  background: #ddd;
+  color: black;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.main__button:hover {
+  background: #fff;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .main__content {
+    flex-direction: column;
+  }
+
+  .main__right {
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+  }
+}
